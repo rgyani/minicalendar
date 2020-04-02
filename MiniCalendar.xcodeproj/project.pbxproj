@@ -8,19 +8,62 @@
 
 /* Begin PBXBuildFile section */
 		1F04622A2433B76D007ED649 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0462292433B76D007ED649 /* AppDelegate.swift */; };
-		1F04622C2433B76D007ED649 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F04622B2433B76D007ED649 /* ViewController.swift */; };
 		1F04622E2433B76D007ED649 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F04622D2433B76D007ED649 /* Assets.xcassets */; };
 		1F0462312433B76D007ED649 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F04622F2433B76D007ED649 /* Main.storyboard */; };
+		1F04623A2433B7BB007ED649 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0462392433B7BB007ED649 /* EventMonitor.swift */; };
+		1F04623C2433B7F5007ED649 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F04623B2433B7F5007ED649 /* CalendarViewController.swift */; };
+		1F32A09824347B1500906EE3 /* CalendarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F32A08D24347B1500906EE3 /* CalendarExtension.swift */; };
+		1F32A09924347B1500906EE3 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F32A08E24347B1500906EE3 /* CollectionViewDataSource.swift */; };
+		1F32A09B24347B1500906EE3 /* THCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F32A09024347B1500906EE3 /* THCalendarView.swift */; };
+		1F32A09C24347B1500906EE3 /* THCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F32A09124347B1500906EE3 /* THCalendarView.xib */; };
+		1F32A09D24347B1500906EE3 /* THDateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F32A09224347B1500906EE3 /* THDateItem.swift */; };
+		1F32A09E24347B1500906EE3 /* THDateItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F32A09324347B1500906EE3 /* THDateItem.xib */; };
+		1F32A09F24347B1500906EE3 /* THMonthItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F32A09424347B1500906EE3 /* THMonthItem.swift */; };
+		1F32A0A024347B1500906EE3 /* THMonthItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F32A09524347B1500906EE3 /* THMonthItem.xib */; };
+		1F32A0A124347B1500906EE3 /* THWeekItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F32A09624347B1500906EE3 /* THWeekItem.swift */; };
+		1F32A0A224347B1500906EE3 /* THWeekItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F32A09724347B1500906EE3 /* THWeekItem.xib */; };
+		1F32A0A82434CA5000906EE3 /* VerticallyCenteredTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F32A0A72434CA5000906EE3 /* VerticallyCenteredTextFieldCell.swift */; };
+		1F32A0C72434D4F800906EE3 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F32A0C62434D4F800906EE3 /* ServiceManagement.framework */; };
+		1FFB063A2434E2C3000972DF /* THPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FFB06382434E2C3000972DF /* THPicker.xib */; };
+		1FFB063B2434E2C3000972DF /* THPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFB06392434E2C3000972DF /* THPicker.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1F32A0C82434D52800906EE3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1F0462262433B76C007ED649 /* MiniCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F0462292433B76D007ED649 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1F04622B2433B76D007ED649 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1F04622D2433B76D007ED649 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F0462302433B76D007ED649 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1F0462322433B76D007ED649 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F0462332433B76D007ED649 /* MiniCalendar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MiniCalendar.entitlements; sourceTree = "<group>"; };
+		1F0462392433B7BB007ED649 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		1F04623B2433B7F5007ED649 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		1F32A08D24347B1500906EE3 /* CalendarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarExtension.swift; sourceTree = "<group>"; };
+		1F32A08E24347B1500906EE3 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
+		1F32A09024347B1500906EE3 /* THCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THCalendarView.swift; sourceTree = "<group>"; };
+		1F32A09124347B1500906EE3 /* THCalendarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = THCalendarView.xib; sourceTree = "<group>"; };
+		1F32A09224347B1500906EE3 /* THDateItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THDateItem.swift; sourceTree = "<group>"; };
+		1F32A09324347B1500906EE3 /* THDateItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = THDateItem.xib; sourceTree = "<group>"; };
+		1F32A09424347B1500906EE3 /* THMonthItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THMonthItem.swift; sourceTree = "<group>"; };
+		1F32A09524347B1500906EE3 /* THMonthItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = THMonthItem.xib; sourceTree = "<group>"; };
+		1F32A09624347B1500906EE3 /* THWeekItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THWeekItem.swift; sourceTree = "<group>"; };
+		1F32A09724347B1500906EE3 /* THWeekItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = THWeekItem.xib; sourceTree = "<group>"; };
+		1F32A0A72434CA5000906EE3 /* VerticallyCenteredTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticallyCenteredTextFieldCell.swift; sourceTree = "<group>"; };
+		1F32A0C32434D42900906EE3 /* MiniCalendar copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MiniCalendar copy-Info.plist"; path = "/Users/ragy6581/workspace/MiniCalendar/MiniCalendar copy-Info.plist"; sourceTree = "<absolute>"; };
+		1F32A0C62434D4F800906EE3 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		1FFB06382434E2C3000972DF /* THPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = THPicker.xib; sourceTree = "<group>"; };
+		1FFB06392434E2C3000972DF /* THPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F32A0C72434D4F800906EE3 /* ServiceManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,6 +83,8 @@
 			children = (
 				1F0462282433B76C007ED649 /* MiniCalendar */,
 				1F0462272433B76C007ED649 /* Products */,
+				1F32A0C32434D42900906EE3 /* MiniCalendar copy-Info.plist */,
+				1F32A0C52434D4F800906EE3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,14 +99,44 @@
 		1F0462282433B76C007ED649 /* MiniCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				1F32A08C24347B1500906EE3 /* THCalendarView */,
 				1F0462292433B76D007ED649 /* AppDelegate.swift */,
-				1F04622B2433B76D007ED649 /* ViewController.swift */,
 				1F04622D2433B76D007ED649 /* Assets.xcassets */,
 				1F04622F2433B76D007ED649 /* Main.storyboard */,
 				1F0462322433B76D007ED649 /* Info.plist */,
 				1F0462332433B76D007ED649 /* MiniCalendar.entitlements */,
+				1F0462392433B7BB007ED649 /* EventMonitor.swift */,
+				1F04623B2433B7F5007ED649 /* CalendarViewController.swift */,
 			);
 			path = MiniCalendar;
+			sourceTree = "<group>";
+		};
+		1F32A08C24347B1500906EE3 /* THCalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				1FFB06392434E2C3000972DF /* THPicker.swift */,
+				1FFB06382434E2C3000972DF /* THPicker.xib */,
+				1F32A08D24347B1500906EE3 /* CalendarExtension.swift */,
+				1F32A08E24347B1500906EE3 /* CollectionViewDataSource.swift */,
+				1F32A09024347B1500906EE3 /* THCalendarView.swift */,
+				1F32A09124347B1500906EE3 /* THCalendarView.xib */,
+				1F32A09224347B1500906EE3 /* THDateItem.swift */,
+				1F32A09324347B1500906EE3 /* THDateItem.xib */,
+				1F32A09424347B1500906EE3 /* THMonthItem.swift */,
+				1F32A09524347B1500906EE3 /* THMonthItem.xib */,
+				1F32A09624347B1500906EE3 /* THWeekItem.swift */,
+				1F32A09724347B1500906EE3 /* THWeekItem.xib */,
+				1F32A0A72434CA5000906EE3 /* VerticallyCenteredTextFieldCell.swift */,
+			);
+			path = THCalendarView;
+			sourceTree = "<group>";
+		};
+		1F32A0C52434D4F800906EE3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F32A0C62434D4F800906EE3 /* ServiceManagement.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -73,6 +149,7 @@
 				1F0462222433B76C007ED649 /* Sources */,
 				1F0462232433B76C007ED649 /* Frameworks */,
 				1F0462242433B76C007ED649 /* Resources */,
+				1F32A0C82434D52800906EE3 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -121,8 +198,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F32A0A224347B1500906EE3 /* THWeekItem.xib in Resources */,
+				1F32A0A024347B1500906EE3 /* THMonthItem.xib in Resources */,
+				1F32A09E24347B1500906EE3 /* THDateItem.xib in Resources */,
 				1F04622E2433B76D007ED649 /* Assets.xcassets in Resources */,
+				1FFB063A2434E2C3000972DF /* THPicker.xib in Resources */,
 				1F0462312433B76D007ED649 /* Main.storyboard in Resources */,
+				1F32A09C24347B1500906EE3 /* THCalendarView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,8 +215,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F04622C2433B76D007ED649 /* ViewController.swift in Sources */,
+				1F32A0A82434CA5000906EE3 /* VerticallyCenteredTextFieldCell.swift in Sources */,
+				1F32A09D24347B1500906EE3 /* THDateItem.swift in Sources */,
+				1FFB063B2434E2C3000972DF /* THPicker.swift in Sources */,
+				1F32A09B24347B1500906EE3 /* THCalendarView.swift in Sources */,
+				1F04623C2433B7F5007ED649 /* CalendarViewController.swift in Sources */,
+				1F32A09924347B1500906EE3 /* CollectionViewDataSource.swift in Sources */,
+				1F32A09F24347B1500906EE3 /* THMonthItem.swift in Sources */,
+				1F04623A2433B7BB007ED649 /* EventMonitor.swift in Sources */,
 				1F04622A2433B76D007ED649 /* AppDelegate.swift in Sources */,
+				1F32A09824347B1500906EE3 /* CalendarExtension.swift in Sources */,
+				1F32A0A124347B1500906EE3 /* THWeekItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
