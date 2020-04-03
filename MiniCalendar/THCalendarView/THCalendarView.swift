@@ -9,14 +9,14 @@
 import Cocoa
 
 
-class THCalendarView: NSViewController {
+class THCalendarView: NSViewController, ChangeDateDelegate {
 
-    var numOfSections = 3
+    var showMonthPicker = false
     
     @IBOutlet weak var collectionView: NSCollectionView!
 
     
-    public static let Month:[String] = DateFormatter().monthSymbols as [String]
+    public static let Months:[String] = DateFormatter().monthSymbols as [String]
     
     // Today
     var date = Date()
@@ -29,7 +29,7 @@ class THCalendarView: NSViewController {
 
     
     enum Section: Int {
-        case month = 0, picker, week, date
+        case month = 0, week, date
     }
 
     public init() {
@@ -55,9 +55,6 @@ class THCalendarView: NSViewController {
     }
 
     func selectSelectedDateItem() {
-//        if let selectedIndexPath = indexPathForDate(selectedDate: selectedDate) {
-//            collectionView?.selectItems(at: [selectedIndexPath ], scrollPosition: [.top])
-//        }
     }
 
     func indexPathForDate(selectedDate: Date) -> IndexPath? {
@@ -76,9 +73,11 @@ class THCalendarView: NSViewController {
     }
 
     
+
     @IBAction func showPicker(_ sender: Any)
     {
-        numOfSections = 4
+        print("Show picker")
+        showMonthPicker = true
         collectionView.reloadData()
         
     }
@@ -107,6 +106,20 @@ class THCalendarView: NSViewController {
             collectionView.reloadData()
         }
     }
+    
+    func changeDate(month: Int, year: Int) {
+    
+        var component = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+        component.year = year
+        component.month = month
+        if let newDate = (Calendar.current.date(from: component)) {
+            date = newDate
+            selectedDate = newDate
+            
+            showMonthPicker = false
+            collectionView.reloadData()
+        }
+    }
 
 }
 
@@ -114,28 +127,7 @@ extension THCalendarView: NSCollectionViewDelegate {
  
 }
 
-extension THCalendarView: NSCollectionViewDelegateFlowLayout {
-    
-    public func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {
 
-        let width = collectionView.bounds.width
-        var size = NSSize()
-
-        switch Section(rawValue: indexPath.section)! {
-        case .month:
-            size =  NSMakeSize(width, 28)
-        case .week:
-            size = NSMakeSize(width / 7, 28)
-        case .date:
-            size = NSMakeSize(width / 7, 28 )
-        case .picker:
-            size =  NSMakeSize(width, 100)
-        }
-
-        return size
-    }
-
-}
 
 extension Date {
     

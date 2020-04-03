@@ -9,19 +9,41 @@
 import Foundation
 import Cocoa
 
+extension THCalendarView: NSCollectionViewDelegateFlowLayout {
+    
+    public func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {
+        
+        if(showMonthPicker) {return NSMakeSize(collectionView.bounds.width, collectionView.bounds.height)}
+
+        let width = collectionView.bounds.width
+        var size = NSSize()
+        
+        switch Section(rawValue: indexPath.section)! {
+        case .month:
+            size =  NSMakeSize(width, 28)
+        case .week:
+            size = NSMakeSize(width / 7, 28)
+        case .date:
+            size = NSMakeSize(width / 7, 28 )
+        }
+        
+        return size
+    }
+    
+}
 extension THCalendarView: NSCollectionViewDataSource {
     
     func numberOfSections(in: NSCollectionView) -> Int {
-        return 4
+        return showMonthPicker ? 1: 3
     }
     
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
         
+        if(showMonthPicker) {return 1}
+        
         switch Section(rawValue: section)! {
         case .month:
             return 1
-        case .picker:
-            return numOfSections == 3 ? 0 : 1
         case .week:
             return 7
         case .date:
@@ -34,13 +56,24 @@ extension THCalendarView: NSCollectionViewDataSource {
         
         var item: NSCollectionViewItem
         let calendar = Calendar.current
+
+        if(showMonthPicker)
+        {
+            item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "THPicker"), for: indexPath)
+            if let item = item as? THPicker {
+                item.configure(month: THCalendarView.Months[calendar.month(date) - 1], year: calendar.year(date))
+                item.delegate = self
+            }
+            return item
+        }
+        
         
         switch Section(rawValue: indexPath.section)! {
         case .month:
             item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "THMonthItem"), for: indexPath)
             
             if let item = item as? THMonthItem {
-                item.configure(month: THCalendarView.Month[calendar.month(date) - 1], year: calendar.year(date))
+                item.configure(month: THCalendarView.Months[calendar.month(date) - 1], year: calendar.year(date))
             }
         case .week:
             item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "THWeekItem"), for: indexPath)
@@ -65,8 +98,8 @@ extension THCalendarView: NSCollectionViewDataSource {
                 item.configure(day: day, inCurrentMonth: inMonth)
                 
                 let index = indexPathForDate(selectedDate: selectedDate)
-                let strMonth = THCalendarView.Month[calendar.month(date) - 1]
-                let monthSelect = THCalendarView.Month[calendar.month(Date()) - 1]
+                let strMonth = THCalendarView.Months[calendar.month(date) - 1]
+                let monthSelect = THCalendarView.Months[calendar.month(Date()) - 1]
                 if indexPath.item == (index?.item)! + beginWeek && strMonth ==  monthSelect {
                     item.isToday = true
                 } else
@@ -84,8 +117,6 @@ extension THCalendarView: NSCollectionViewDataSource {
                 
                 item.isHidden = false
             }
-        case .picker:
-            item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "THPicker"), for: indexPath)
         }
         return item
 

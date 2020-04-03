@@ -10,22 +10,22 @@ import Cocoa
 
 class THMonthItem: NSCollectionViewItem {
     
-    @IBOutlet weak var monthField: NSTextField!
+    @IBOutlet weak var btnMonth: NSButton!
     
     var attributesMonth = [NSAttributedString.Key: Any]()
     var attributesYear = [NSAttributedString.Key: Any]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.wantsLayer = true
-        view.layer?.backgroundColor = NSColor.controlBackgroundColor.cgColor
-        
+//        view.wantsLayer = true
+//        view.layer?.backgroundColor = NSColor.controlColor.cgColor
         
     }
     
     func configure(month: String, year: Int) {
         
         let month = String(month.prefix(1)).uppercased() + String(month.dropFirst().prefix(2))
-        monthField.stringValue = "\(month) \(year)"
+        
+        btnMonth.title = "\(month) \(year)"
     }
 }
